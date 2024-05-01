@@ -1,1 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+/* Tailwind */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Animation */
+@import "animate.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #000;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label,
+.mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-floating-label--float-above {
+  color: #fff !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+  border-bottom: none !important;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mdc-text-field--filled {
+  background-color: #000 !important;
+}
+
+.movies-container {
+  min-height: calc(100vh - 80px);
+}

@@ -1,0 +1,11 @@
+<div class="w-full absolute flex justify-end">
+    <button mat-icon-button (click)="onCloseDialog()">
+        <mat-icon class=" text-red-600">close</mat-icon>
+    </button>
+</div>
+
+<div class="video-container">
+    <iframe width="854" height="480" [src]="safeTrailerLink" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+</div>

@@ -1,0 +1,57 @@
+<div class="movies-container animate__animated animate__fadeInLeft">
+    <div class="p-5 pl-10 text-center sm:text-start">
+        <h1 class="text-5xl font-bold text-red-600">Movie details</h1>
+        <h2 class="text-zinc-100">Check details of the selected movie</h2>
+    </div>
+
+
+    <section class="flex flex-col items-center sm:items-start xl:flex-row gap-10 py-5 px-10">
+        <div class="flex flex-col gap-7 text-zinc-400">
+            <h1 class="text-4xl font-bold text-white text-center sm:text-start">{{ movie.title }}</h1>
+
+            <img class="object-cover pointer-events-none w-full h-[440px] cursor-pointer rounded-lg border-zinc-800 border-2"
+                [src]="'https://image.tmdb.org/t/p/w500/' + movie.backdrop_path" [alt]="movie.title">
+
+            <p class="max-w-lg text-zinc-100">{{ movie.overview }}</p>
+
+            <div class="flex items-center justify-start flex-wrap gap-5 text-zinc-300">
+                <div class="flex items-center gap-2">
+                    <p class="text-white font-medium">Released on:</p>
+                    <div class="flex items-center gap-1 ">
+                        <p>{{ movie.release_date | date : 'MMMM dd, yyyy' : 'mediumDate' }}</p>
+                        <mat-icon class="text-blue-500">event_available</mat-icon>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <p class="text-white font-medium">Rating:</p>
+                    <div class="flex items-center gap-2">
+                        <p>{{ movie.vote_average | round }}<span class="text-xs italic">/10</span></p>
+                        <app-rating-star [rating]="movie.vote_average | round" />
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <p class="text-white font-medium">User score:</p>
+                    <div class="relative">
+                        <div class="absolute text-sm top-[20px] left-[12px] flex justify-center w-[40px] h-[40px]">
+                            <span class="text-sm">{{ (movie.vote_average * 10) | round }}%
+                            </span>
+                        </div>
+                        <mat-progress-spinner class="example-margin" mode="determinate" strokeWidth="3" diameter="60"
+                            [value]="(movie.vote_average * 10) | round">
+                        </mat-progress-spinner>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <button type="button" class="flex ml-10 bg-zinc-900 w-fit p-3 rounded-full hover:bg-zinc-800 transition ease-linear"
+        routerLink="/">
+        <mat-icon class="text-zinc-100" matTooltip="Back to Home">arrow_back</mat-icon>
+    </button>
+</div>
