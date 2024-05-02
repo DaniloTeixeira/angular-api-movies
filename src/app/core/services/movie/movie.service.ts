@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { API_INFO } from '../../data/api-info';
@@ -14,10 +14,8 @@ export class MovieService {
   getTopRatedMovies(): Observable<ApiResult[]> {
     const url = `${this.baseUrl}/top_rated`;
 
-    let params = new HttpParams().append('page', '1');
-
     return this.http
-      .get<Movie>(url, { params })
+      .get<Movie>(url)
       .pipe(map((res) => res?.results.slice(0, 10)));
   }
 

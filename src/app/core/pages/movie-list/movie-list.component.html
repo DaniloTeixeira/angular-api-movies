@@ -4,9 +4,9 @@
         <h2>Click on the image to see the movie details</h2>
     </div>
 
-    <div class="animate__animated animate__fadeInUp">
+    <div>
         <form class="p-5 flex justify-center sm:justify-start">
-            <mat-form-field class="w-11/12 md:w-[500px] relative">
+            <mat-form-field class="w-11/12 md:w-[500px] relative animate__animated animate__fadeInDown">
                 <mat-label>Filter</mat-label>
                 <mat-spinner [diameter]="30" color="warn" *ngIf="searchingMovies"></mat-spinner>
                 <input [formControl]="filterField" class="pr-9" type="text" matInput
@@ -22,7 +22,8 @@
             <h1 class="text-center text-2xl mt-20 text-zinc-300">No movies found.</h1>
         </ng-container>
 
-        <div class="flex justify-center sm:justify-start flex-wrap items-end gap-14 mx-5">
+        <div
+            class="flex justify-center sm:justify-start flex-wrap items-end gap-14 mx-5 animate__animated animate__fadeInUp">
             <div class="w-[300px]" *ngFor="let movie of (filteredMovies$ | async); index as i">
                 <a (click)="goToMovieDetails(movie)">
                     <div class="relative">

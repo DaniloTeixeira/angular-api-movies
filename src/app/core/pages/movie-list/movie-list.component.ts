@@ -59,12 +59,16 @@ export class MovieListComponent implements OnInit {
 
   private setFilteredMovies(): void {
     this.filteredMovies$ = this.filterField.valueChanges.pipe(
-      tap(() => (this.searchingMovies = true)),
+      tap(() => {
+        this.searchingMovies = true;
+      }),
       takeUntilDestroyed(this.destroyRef),
       startWith(''),
       debounceTime(500),
       map((value) => this.filterMovies(value as string)),
-      tap(() => (this.searchingMovies = false))
+      tap(() => {
+        this.searchingMovies = false;
+      })
     );
   }
 }

@@ -1,10 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { RATING_STARS } from '../../data/rating-stars';
 
 @Component({
   selector: 'app-rating-star',
   templateUrl: './rating-star.component.html',
   styleUrls: ['./rating-star.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RatingStarComponent implements OnInit {
   @Input({ required: true }) rating!: number;
@@ -31,5 +37,6 @@ export class RatingStarComponent implements OnInit {
     };
 
     this.ratingStars = RATING_STARS[ratingStar[ratingIndex]];
+    console.log(this.ratingStars);
   }
 }
