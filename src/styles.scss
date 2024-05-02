@@ -45,3 +45,14 @@ body {
 .movies-container {
   min-height: calc(100vh - 80px);
 }
+
+div.mdc-snackbar__surface.ng-tns-c3293340843-1 {
+  background-color: #161918;
+  border: 1px solid #fb0423;
+}
+
+div.mat-mdc-snack-bar-label.mdc-snackbar__label {
+  color: #fb0423;
+  font-weight: 500;
+  font-size: 15px;
+}

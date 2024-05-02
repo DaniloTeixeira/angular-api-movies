@@ -7,5 +7,5 @@ import { LoaderService } from '../../services/loader';
   styleUrls: ['./loader.component.scss'],
 })
 export class LoaderComponent {
-  public showLoader$ = inject(LoaderService).showLoader$;
+  protected readonly showLoader$ = inject(LoaderService).showLoader$;
 }
