@@ -12,7 +12,7 @@ Abra a pasta do projeto em um editor de código de sua preferência, e rode o co
 
 ## Bibliotecas utilizadas no projeto
 
-- Angualar Material
+- Angular Material
 - TailwindCSS
 - Animate.css
 
