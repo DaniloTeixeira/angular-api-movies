@@ -37,6 +37,5 @@ export class RatingStarComponent implements OnInit {
     };
 
     this.ratingStars = RATING_STARS[ratingStar[ratingIndex]];
-    console.log(this.ratingStars);
   }
 }
